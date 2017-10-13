@@ -1,0 +1,24 @@
+{
+  "name": "zadanie8",
+  "version": "1.0.0",
+  "description": "Zadanie 8 Kodilla",
+  "main": "index.js",
+  "scripts": {
+    "test": "\u0016echo \\\"Error: no test specified\\\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/baku171/Zadanie_8.git"
+  },
+  "author": "Przemek",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/baku171/Zadanie_8/issues"
+  },
+  "homepage": "https://github.com/baku171/Zadanie_8#readme",
+  "devDependencies": {
+    "@types/jquery": "^3.2.13",
+    "grunt": "^1.0.1",
+    "grunt-contrib-jshint": "^1.1.0"
+  }
+}
