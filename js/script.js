@@ -91,7 +91,7 @@ $(function(){
       });
       card.append(cardDeleteBtn);
       cardDescription.text(self.description);
-      card.append(cardDescription)
+      card.append(cardDescription);
       return card;
     }
   }
@@ -99,7 +99,7 @@ $(function(){
     removeCard: function() {
       this.element.remove();
     }
-  }
+  };
 
   // TWORZENIE NOWYCH EGZEMPLARZY KOLUMN
   var todoColumn = new Column('Do zrobienia');
@@ -118,4 +118,4 @@ $(function(){
   // DODAWANIE KART DO KOLUMN
   todoColumn.createCard(card1);
   doingColumn.createCard(card2);
-})
+});

@@ -1,7 +1,7 @@
-function Column(name) {
+function Column(id, name) {
 	var self = this;
 	
-	this.id = randomString();
+	this.id = id;
 	this.name = name;
 	this.element = createColumn();
 
@@ -18,12 +18,26 @@ function Column(name) {
 			self.deleteColumn();
 		});
 		
+		// DODAWANIE KARTY
 		columnAddCard.click(function(event) {
+			var cardName = prompt("Wpisz nazwę karty", "Nowa karta");
 			event.preventDefault();
-			self.createCard(new Card(prompt("Wpisz nazwę karty")));
+			$.ajax({
+				method: 'POST',
+				url: baseUrl + '/card',
+				data: {
+					name: cardName,
+					bootcamp_kanban_column_id: self.id
+				},
+				success: function(response) {
+					var card = new Card(response.id, cardName);
+					self.createCard(card);
+				}
+			});
+			self.createCard(new Card(cardName));
 		});
 			
-			// KONSTRUOWANIE ELEMENTU KOLUMNY
+		// KONSTRUOWANIE ELEMENTU KOLUMNY
 		column.append(columnTitle)
 			.append(columnDelete)
 			.append(columnAddCard)
@@ -36,6 +50,13 @@ Column.prototype = {
 	  this.element.children('ul').append(card.element);
 	},
 	deleteColumn: function() {
-	  this.element.remove();
+	  var self = this;
+	  $.ajax({
+		  method: 'DELETE',
+		  url: baseUrl + '/column' + self.id,
+		  success: function(response) {
+			  self.element.remove();
+		  }
+	  });
 	}
 };

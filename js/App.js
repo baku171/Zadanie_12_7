@@ -8,23 +8,23 @@
 // 	return str;
 // }
 
-// TWORZENIE NOWYCH EGZEMPLARZY KOLUMN
-var todoColumn = new Column('Do zrobienia');
-var doingColumn = new Column('W trakcie');
-var doneColumn = new Column('Skończone');
+// // TWORZENIE NOWYCH EGZEMPLARZY KOLUMN
+// var todoColumn = new Column('Do zrobienia');
+// var doingColumn = new Column('W trakcie');
+// var doneColumn = new Column('Skończone');
 
-// DODAWANIE KOLUMN DO TABLICY
-board.createColumn(todoColumn);
-board.createColumn(doingColumn);
-board.createColumn(doneColumn);
+// // DODAWANIE KOLUMN DO TABLICY
+// board.createColumn(todoColumn);
+// board.createColumn(doingColumn);
+// board.createColumn(doneColumn);
 
-// TWORZENIE NOWYCH EGZEMPLARZY KART
-var card1 = new Card('Nowe zadanie');
-var card2 = new Card('stworzyc tablice kanban');
+// // TWORZENIE NOWYCH EGZEMPLARZY KART
+// var card1 = new Card('Nowe zadanie');
+// var card2 = new Card('stworzyc tablice kanban');
 
-// DODAWANIE KART DO KOLUMN
-todoColumn.createCard(card1);
-doingColumn.createCard(card2);
+// // DODAWANIE KART DO KOLUMN
+// todoColumn.createCard(card1);
+// doingColumn.createCard(card2);
 
 // ZMIENNE DLA API
 var baseUrl = 'https://kodilla.com/pl/bootcamp-api';
@@ -61,5 +61,5 @@ function setupCards(col, cards) {
 	cards.forEach(function() {
 		var card = new Card(card.id, card.name, card.bootcamp_kanban_column_id);
 		col.createCard(card);
-	})
+	});
 }
