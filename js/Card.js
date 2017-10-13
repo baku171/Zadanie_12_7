@@ -12,10 +12,9 @@ function Card(id, name) {
 		var cardDescription = $('<p class="card-description"></p>');
 		
 		cardDeleteBtn.click(function(){
-			var self = this;
 			$.ajax({
 				method: 'DELETE',
-				url: baseUrl + '/card' + self.id,
+				url: baseUrl + '/card/' + self.id,
 				success: function() {
 					self.removeCard();
 				}

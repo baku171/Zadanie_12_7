@@ -15,7 +15,7 @@ $('.create-column').click(function(){
       data: {
         name: columnName
       },
-      success: function(){
+      success: function(response){
         var column = new Column(response.id, columnName);
         board.createColumn(column);
       }

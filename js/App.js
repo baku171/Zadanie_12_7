@@ -29,8 +29,8 @@
 // ZMIENNE DLA API
 var baseUrl = 'https://kodilla.com/pl/bootcamp-api';
 var myHeaders = {
-	'X-Client-Id': 'X-Client-Id',
-	'X-Auth-Token': 'X-Auth-Token'
+	'X-Client-Id': '2346',
+	'X-Auth-Token': 'edcd28ba1f48767fe466f32c44fd2f56'
 };
 
 // KONFIGURACJA AJAX
@@ -58,7 +58,7 @@ function setupColumns(columns) {
 
 // TWOERZENIE KART
 function setupCards(col, cards) {
-	cards.forEach(function() {
+	cards.forEach(function(card) {
 		var card = new Card(card.id, card.name, card.bootcamp_kanban_column_id);
 		col.createCard(card);
 	});
